@@ -1,26 +1,28 @@
+import requests
 import json
 
-def parse_data_from_file(file_path):
-    with open(file_path, 'r', encoding='latin-1') as file:
-        lines = file.readlines()  
-        
-    parsed_data = []
-    for line in lines:
-        if ':' in line:
-            parts = line.split(':', 1)
-            name = parts[0].strip()
-            cik = parts[1].strip().rstrip(':') 
-            parsed_data.append({"name": name, "cik": cik})
-    
-    return parsed_data
+def extract_cik_from_txt(file_path):
+    ciks = []
+    with open(file_path, 'r') as file:
+        for line in file:
+            # Split the line by the colon and get the last part
+            parts = line.strip().split(':')
+            if len(parts) > 1:
+                cik = parts[1].strip()  # Get the CIK part and remove whitespace
+                if cik.isdigit():  # Check if the CIK is numeric
+                    ciks.append(cik)
+    return ciks
 
-input_file_path = "cik-lookup-data.txt" 
+def write_ciks_to_json(cik_numbers, output_file):
+    with open(output_file, 'w') as json_file:
+        json.dump(cik_numbers, json_file, indent=4)  # Write CIK numbers to JSON with indentation
 
-parsed_data = parse_data_from_file(input_file_path)
+def main(txt_file, output_file):
+    cik_numbers = extract_cik_from_txt(txt_file)
+    write_ciks_to_json(cik_numbers, output_file)  # Write to JSON file
+    print(f"Extracted CIK numbers written to {output_file}")
 
-json_output = json.dumps(parsed_data, indent=4)
-
-output_file_path = "parsed_companies.json"
-
-with open(output_file_path, "w") as json_file:
-    json_file.write(json_output)
+if __name__ == "__main__":
+    txt_file_path = './cik-lookup-data-3.txt'  # Update with your file path
+    output_file_path = './cik_numbers.json'  # Specify the output JSON file path
+    main(txt_file_path, output_file_path)
