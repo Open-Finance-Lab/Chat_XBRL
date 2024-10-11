@@ -1,0 +1,25 @@
+import requests
+from bs4 import BeautifulSoup
+import os
+import re
+from urllib.parse import urljoin
+
+def downloadAll10k(fileName):
+  #Gather all CIK files from JSON
+  tempUrl = ""
+  download_dir = os.path.abspath("downloads")
+  file = open(fileName, 'r')
+  for line in file:
+    loc = line.find("cik")
+    if(loc == -1):
+      continue
+    tempCIK = line[loc + 6 : loc + 17 : 1]
+    print(tempCIK)
+    urls = load_10k_xbrl(tempCIK, ["2019","2020","2021","2022", "2023"])
+    for item in urls:
+      folder, xbrl_file = download_sec_files(item, download_dir)
+      # print(f"Folder: {folder}, XBRL File: {xbrl_file}")
+      pass
+
+    
+downloadAll10k("parsed_companies.json")
