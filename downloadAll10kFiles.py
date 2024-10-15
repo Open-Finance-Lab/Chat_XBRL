@@ -17,7 +17,7 @@ def downloadAll10k(fileName):
     loc = line.find("cik")
     if(loc == -1):
       continue
-    tempCIK = line[loc + 6 : loc + 17 : 1]
+    tempCIK = line[loc + 7 : loc + 17 : 1]
     print(tempCIK)
     urls = load_10k_xbrl(tempCIK, ["2019","2020","2021","2022", "2023"]) # Years can be modified
     for item in urls:
