@@ -27,3 +27,8 @@ Once the CIK numbers are parsed, the script navigates to the SEC EDGAR website a
 
 3. Retrieving the 10-K Filings
 The retrieved 10-K filings are saved to the specified output folder. The program checks if the folder exists, and if not, it creates the directory. The 10-K documents (HTML or TXT) are then saved with the company CIK as the file name and year. 
+
+
+10/22/24
+- Added functionality to process 100 queries instead of 40 queries
+- Only extract XML files
