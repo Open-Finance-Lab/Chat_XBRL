@@ -32,3 +32,5 @@ The retrieved 10-K filings are saved to the specified output folder. The program
 10/22/24
 - Added functionality to process 100 queries instead of 40 queries
 - Only extract XML files
+
+- Added a parser to create JSON file of CIK number as well as company name
