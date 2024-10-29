@@ -51,7 +51,7 @@ def extract_xbrl_tags(queries):
                 "id": idx + 1,
                 "query": query['query'],
                 "text": ''.join(extracted_data),
-                "answer": f"Answer:{tag_set.pop()}"  # Assuming the first tag in set as answer
+                "answer": ""
             }
             results.append(result)
 
