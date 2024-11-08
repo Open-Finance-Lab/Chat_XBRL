@@ -11,6 +11,7 @@ release:
   origin: MIT
   producer: 'FAIR (Fundamental Artificial Intelligence Research)'
   contact: ''
+  classification: 
   components:
     -
       name: 'Model architecture'

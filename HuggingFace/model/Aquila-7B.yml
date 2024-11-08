@@ -11,6 +11,7 @@ release:
   origin: ''
   producer: BAAI
   contact: ''
+  classification: 
   components:
     -
       name: 'Model architecture'

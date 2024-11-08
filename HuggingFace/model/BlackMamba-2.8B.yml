@@ -12,6 +12,7 @@ release:
   producer: Zyphra
   contact: ''
   components:
+  classification: 'Class III - Open Model'
     -
       name: 'Model architecture'
       description: "Well commented code for the model's architecture"

@@ -11,7 +11,9 @@ release:
   origin: ''
   producer: DeepMind
   contact: ''
+  classification: 'Class III - Open Model'
   components:
+  
     -
       name: 'Model architecture'
       description: "Well commented code for the model's architecture"
