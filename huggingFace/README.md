@@ -150,3 +150,16 @@ Create a feature branch (git checkout -b feature-branch).
 Commit your changes (git commit -m "Add new feature").
 Push to your branch (git push origin feature-branch).
 Open a Pull Request.
+
+Updates to the Web Scraper
+The web scraper has undergone significant updates to improve its functionality, reliability, and compatibility with the target website’s structure. Initially, the script included placeholder selectors for scraping data, which made it non-functional for real-world usage. These placeholders have been replaced with accurate and dynamic CSS selectors and attributes that align with the actual HTML structure of the target website. This ensures that the scraper can successfully extract both classification and badge data without errors.
+
+Furthermore, error handling has been greatly enhanced throughout the script. Previously, there was minimal handling for scenarios where HTTP requests failed or when specific elements on the page were missing. The updated script now includes detailed error messages for situations such as network failures, invalid responses, or changes in the website’s layout. This not only prevents the script from crashing but also provides clear feedback to the user, making debugging and maintenance significantly easier.
+
+In terms of YAML file integration, the script was updated to handle a wider range of scenarios. For instance, if the specified YAML file does not exist, the script will now create a new file and initialize it with the required structure. If the file exists but lacks a "release" section, the script dynamically adds this section before updating it with the scraped data. This ensures seamless operation regardless of the starting state of the YAML file. Additionally, the data-saving process has been optimized to retain the original file structure and formatting wherever possible, improving both usability and clarity for future edits.
+
+To improve user experience, detailed logging has been introduced. This includes messages indicating whether the classification or badge data was successfully found, whether it was updated in the YAML file, or if no relevant data was retrieved from the website. These logs provide valuable insights into the scraper’s operations and make it easier to track what the script has accomplished during execution. Moreover, they help identify areas where additional adjustments might be needed, especially if the target website’s structure changes in the future.
+
+Finally, the script has been designed with adaptability in mind. The selectors and scraping logic are modular, making it easier to adjust them for changes in the target website’s structure. For example, the classification and badge scraping functions can be updated independently to accommodate new element identifiers or attributes. These improvements, combined with better error handling and YAML integration, ensure that the web scraper is robust, user-friendly, and capable of delivering consistent results even in the face of evolving requirements.
+
+By addressing previous limitations and adding new features, this update transforms the web scraper into a powerful, reliable, and maintainable tool that is ready for production use.
