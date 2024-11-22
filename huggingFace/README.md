@@ -239,3 +239,72 @@ scrape_classification(url): Scrapes the classification data from a specified URL
 scrape_badges(url): Scrapes badge data from a specified URL.
 Main Function: The main() function coordinates the loading of YAML data, web scraping, and updating the YAML file using the imported utility functions.
 
+
+
+1. Integration of Web Scraper
+New Function: scrape_model_data
+Purpose: Simulates scraping data from the web for machine learning models.
+Implementation:
+Generates a placeholder dataset to represent scraped data.
+Returns a pandas.DataFrame with the same structure as the YAML data.
+Example Output:
+python
+Copy code
+[{"Name": "Scraped Model 1", "Organization": "Org A", ...}]
+Modification: get_combined_data
+Purpose: Combines local YAML data with the scraped web data.
+Implementation:
+Calls load_all_models(directory) to load YAML data.
+Calls scrape_model_data() to get scraped data.
+Merges the two datasets using pd.concat.
+2. Refresh Functionality
+New Function: refresh_data
+Purpose: Allows dynamic reloading of YAML and scraped data.
+Implementation:
+Reloads data using get_combined_data.
+Resets the pagination to display the first page.
+Updates the table with the refreshed data.
+3. Pagination and Search Capabilities
+Preserved Functionality
+filter_data: Filters data based on user inputs for Name and Organization.
+paginate_data: Handles data slicing for the current page based on page size and number.
+Event Handlers: All pagination buttons (Next, Previous, and Go to Page) remain unchanged.
+4. Changes in User Interface
+Addition: Refresh Button
+UI Element: A "🔄 Refresh Data" button was added.
+Functionality: Links to the refresh_data function. Reloads both YAML and scraped data, resets the table to the first page, and updates pagination controls.
+Pagination Controls Enhanced
+Preserved: Buttons (Previous, Next, Go to Page) and page numbering display.
+Updated: Automatically refreshes pagination limits when new data is loaded.
+5. Data Handling Enhancements
+Unified Data Source: global_df
+Modification: global_df now contains both YAML and scraped data.
+Impact: Ensures seamless integration of multiple data sources for filtering and pagination.
+Dynamic Updates:
+Reloading the table is efficient and does not affect user interaction.
+6. Changes to Event Functions
+The following events were updated to support the new dynamic global_df:
+
+Search Functionality
+Functions Affected:
+on_search_change
+on_prev
+on_next
+on_go
+Impact: These functions now operate on the refreshed global_df.
+Refresh Integration
+Button: refresh_button
+Linked Function: refresh_data
+Output:
+Updates table data (table_output).
+Resets pagination (total_pages_text, page number).
+Code Design Benefits
+Modular: New functionality integrates cleanly without disrupting the original structure.
+Scalable: The script can handle more data sources or scrapers in the future.
+User-Friendly: Improved UI with dynamic data refresh options.
+Conclusion
+The updated script now provides:
+
+Dynamic Data Refreshing: Seamlessly integrates YAML and scraped data.
+Preserved Features: Retains the search, pagination, and filtering functionalities.
+Improved Scalability: Allows future data source additions without significant changes.
