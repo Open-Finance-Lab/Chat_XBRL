@@ -163,3 +163,79 @@ To improve user experience, detailed logging has been introduced. This includes 
 Finally, the script has been designed with adaptability in mind. The selectors and scraping logic are modular, making it easier to adjust them for changes in the target website’s structure. For example, the classification and badge scraping functions can be updated independently to accommodate new element identifiers or attributes. These improvements, combined with better error handling and YAML integration, ensure that the web scraper is robust, user-friendly, and capable of delivering consistent results even in the face of evolving requirements.
 
 By addressing previous limitations and adding new features, this update transforms the web scraper into a powerful, reliable, and maintainable tool that is ready for production use.
+
+
+11/22/24 Update
+Documentation for Modular Web Scraper Update
+Introduction
+This documentation explains the updates made to a Python web scraper to improve its modularity and maintainability. By separating utility functions into a dedicated file and importing them into the main script, the updated structure adheres to the principles of modular design, enabling easier reuse, testing, and scalability.
+
+Updated Structure
+Files Created/Modified
+utils.py
+Contains utility functions for YAML file operations and data updating. This file centralizes common functionalities that can be reused in other projects.
+
+Main Script (main.py)
+Handles web scraping and integrates functionalities from utils.py. It focuses on the program's core logic.
+
+Breakdown of Changes
+1. Utility Functions in utils.py
+The utils.py file encapsulates commonly used operations related to YAML files and updating data. This separation reduces redundancy and enhances readability.
+
+Functions in utils.py
+load_yaml(file_path)
+Purpose: Loads data from a YAML file, creating a new YAML file if one doesn't exist.
+Parameters:
+
+file_path (str): Path to the YAML file.
+Returns:
+(dict): The parsed YAML data or an empty dictionary if the file doesn't exist.
+Example Usage:
+
+python
+Copy code
+yaml_data = load_yaml('example.yml')
+save_yaml(data, file_path)
+Purpose: Saves data to a YAML file.
+Parameters:
+
+data (dict): Data to be written to the file.
+file_path (str): Path to the YAML file.
+Returns: None.
+Example Usage:
+
+python
+Copy code
+save_yaml(yaml_data, 'example.yml')
+update_yaml_with_classification_and_badges(yaml_data, classification, badges)
+Purpose: Updates a YAML dictionary with classification and badge data.
+Parameters:
+
+yaml_data (dict): The YAML data to be updated.
+classification (str): Classification data to add.
+badges (list): List of badge data to add.
+Returns: None (updates the yaml_data object in-place).
+Example Usage:
+
+python
+Copy code
+update_yaml_with_classification_and_badges(yaml_data, "Class A", ["Badge 1", "Badge 2"])
+2. Main Script (main.py)
+The main script imports the utility functions from utils.py to perform YAML operations and focuses on web scraping. The main script handles:
+
+Fetching data from a URL.
+Processing the data.
+Updating the YAML file with new information.
+Changes Made to main.py
+Import Utility Functions:
+The following import statement is added at the top of the main script:
+
+python
+Copy code
+from utils import load_yaml, save_yaml, update_yaml_with_classification_and_badges
+Core Scraping Functions: These functions are retained in the main script as they directly handle the logic for web scraping:
+
+scrape_classification(url): Scrapes the classification data from a specified URL.
+scrape_badges(url): Scrapes badge data from a specified URL.
+Main Function: The main() function coordinates the loading of YAML data, web scraping, and updating the YAML file using the imported utility functions.
+
