@@ -310,7 +310,35 @@ Preserved Features: Retains the search, pagination, and filtering functionalitie
 Improved Scalability: Allows future data source additions without significant changes.
 
 New web scraper changes and functionalities:
-Concurrent Requests: Use asyncio and aiohttp to make the scraper faster by handling multiple HTTP requests concurrently.
-Improved Data Parsing: Switch to a more flexible HTML/XML parsing library such as lxml for performance improvements and more advanced selector support.
-Structured Logging: Integrate structured logging for better debugging and monitoring.
-Additional Features: Introduce new functionalities, such as handling pagination, exporting scraped data to a database, and using fallback strategies for missing data.
+Features
+1. Concurrency with asyncio
+The scraper uses asynchronous programming with aiohttp and asyncio, allowing concurrent HTTP requests. This significantly improves performance, especially when scraping multiple pages.
+
+2. Advanced HTML Parsing
+The lxml library is used for HTML parsing with support for XPath, making data extraction more flexible and robust compared to traditional CSS selectors.
+
+3. Error Handling
+Robust error-handling mechanisms ensure graceful recovery from network issues and missing data. Errors are logged for debugging purposes.
+
+4. Structured Logging
+Logging is configured to provide timestamped, clear, and informative messages. This aids in monitoring and debugging.
+
+5. Multi-Page Scraping
+The scraper can handle pagination, making it suitable for websites that divide data across multiple pages.
+
+6. YAML Configuration Updates
+Scraped data is seamlessly integrated into an existing YAML file using helper functions (load_yaml, save_yaml, update_yaml_with_classification_and_badges).
+
+7. Data Export
+Scraped results are exported to a JSON file for further analysis or backup.
+
+Prerequisites
+Ensure the following dependencies are installed:
+
+Python 3.8+
+Libraries: aiohttp, lxml, pyyaml
+Install dependencies using:
+
+bash
+Copy code
+pip install aiohttp lxml pyyaml
