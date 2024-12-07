@@ -1,64 +1,83 @@
-import requests
-from bs4 import BeautifulSoup
+import aiohttp
+import asyncio
+from lxml import html
 from utils import load_yaml, save_yaml, update_yaml_with_classification_and_badges  # Import from utils
+import logging
+import json
 
-def scrape_classification(url):
-    """Scrapes the classification data from the given URL."""
+# Configure logging
+logging.basicConfig(level=logging.INFO, format="%(asctime)s - %(levelname)s - %(message)s")
+
+async def fetch(session, url):
+    """Asynchronous fetch for making concurrent requests."""
     try:
-        response = requests.get(url)
-        response.raise_for_status()
-        soup = BeautifulSoup(response.text, 'html.parser')
-        
-        # Adjust the selector based on actual website structure
-        classification_tag = soup.find('a', href=True, text='Classification')  # Example selector
-        if classification_tag:
-            return classification_tag.get_text(strip=True)
-        else:
-            print("Classification data not found.")
-            return ""
-    except requests.RequestException as e:
-        print(f"Error fetching classification: {e}")
-        return ""
+        async with session.get(url) as response:
+            response.raise_for_status()
+            logging.info(f"Fetched content from {url}")
+            return await response.text()
+    except aiohttp.ClientError as e:
+        logging.error(f"Request failed for {url}: {e}")
+        return None
 
-def scrape_badges(url):
-    """Scrapes multiple badge data from the given URL."""
+async def scrape_classification_and_badges(url):
+    """Scrapes classification and badges from a URL."""
+    async with aiohttp.ClientSession() as session:
+        html_content = await fetch(session, url)
+        if not html_content:
+            return None, None
+        
+        tree = html.fromstring(html_content)
+
+        # Adjust XPath/CSS selectors based on the website structure
+        classification = tree.xpath("//a[contains(text(), 'Classification')]/text()")
+        badges = tree.xpath("//div[@class='badge-class']/text()")
+        
+        classification = classification[0].strip() if classification else "No Classification Found"
+        badges = [badge.strip() for badge in badges] if badges else []
+
+        return classification, badges
+
+async def scrape_multiple_pages(base_url, page_count):
+    """Scrapes multiple pages for classification and badges."""
+    tasks = []
+    for page in range(page_count):
+        url = f"{base_url}&page={page}"
+        tasks.append(scrape_classification_and_badges(url))
+    
+    results = await asyncio.gather(*tasks)
+    return results
+
+def export_to_json(data, output_file):
+    """Exports scraped data to a JSON file."""
     try:
-        response = requests.get(url)
-        response.raise_for_status()
-        soup = BeautifulSoup(response.text, 'html.parser')
-        
-        # Adjust the selector based on actual website structure
-        badges = []
-        badge_tags = soup.select('.badge-class')  # Example CSS selector
-        for badge_tag in badge_tags:
-            badges.append(badge_tag.get_text(strip=True))
-        
-        if not badges:
-            print("Badge data not found.")
-        return badges
-    except requests.RequestException as e:
-        print(f"Error fetching badges: {e}")
-        return []
+        with open(output_file, 'w') as f:
+            json.dump(data, f, indent=4)
+        logging.info(f"Exported data to {output_file}")
+    except Exception as e:
+        logging.error(f"Failed to export data to JSON: {e}")
 
-def main(yaml_file, url):
-    # Load the YAML data
+async def main(yaml_file, base_url, output_file, page_count=5):
+    # Load YAML data
     yaml_data = load_yaml(yaml_file)
-    
-    # Scrape the classification and badges data from the website
-    classification = scrape_classification(url)
-    badges = scrape_badges(url)
-    
-    # Update YAML with the classification and badges
-    if classification or badges:
-        update_yaml_with_classification_and_badges(yaml_data, classification, badges)
-        
-        # Save the updated YAML data
-        save_yaml(yaml_data, yaml_file)
-        print(f"Updated YAML file with classification: {classification} and badges: {badges}")
-    else:
-        print("No classification or badge data found to update YAML.")
+
+    # Scrape data
+    logging.info("Starting the web scraping process.")
+    results = await scrape_multiple_pages(base_url, page_count)
+
+    # Update YAML with scraped data
+    for classification, badges in results:
+        if classification or badges:
+            update_yaml_with_classification_and_badges(yaml_data, classification, badges)
+
+    # Save updated YAML
+    save_yaml(yaml_data, yaml_file)
+    logging.info(f"Updated YAML file: {yaml_file}")
+
+    # Export results to JSON for additional insight
+    export_to_json(results, output_file)
 
 # Usage
 yaml_file_path = 'models_Amber.yml'
 website_url = 'https://mot.isitopen.ai/?page=0'
-main(yaml_file_path, website_url)
+output_file = 'scraped_results.json'
+asyncio.run(main(yaml_file_path, website_url, output_file))
