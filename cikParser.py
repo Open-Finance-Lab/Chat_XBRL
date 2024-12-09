@@ -3,6 +3,10 @@
 import requests
 import json
 
+#The goal of this parser is to take the input file produce an output json file to be used by the webscraper
+#The result looks like the following: "CIK": "0001993586", "companyname": "KERSHAW DAVID"
+#The reason this was picked was because the 10K XBRL extraction file takes cik and name in order to make specific files. 
+
 def extract_cik_from_txt(file_path):
     ciks = []
     with open(file_path, 'r') as file:
