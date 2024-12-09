@@ -11,6 +11,7 @@ release:
   origin: Arctic-Base
   producer: Snowflake
   contact: ''
+  classification: 'Class III - Open Model'
   components:
     -
       name: 'Model architecture'

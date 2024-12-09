@@ -11,6 +11,7 @@ release:
   origin: MIT
   producer: ''
   contact: ''
+  classification: 'Class III - Open Model'
   components:
     -
       name: 'Model architecture'

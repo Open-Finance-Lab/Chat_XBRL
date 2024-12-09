@@ -11,6 +11,7 @@ release:
   origin: Amber
   producer: LLM360
   contact: ''
+  classification: 'Class III - Open Model'
   components:
     -
       name: 'Model architecture'
