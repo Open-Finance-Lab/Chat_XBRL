@@ -32,6 +32,16 @@ if __name__ == "__main__":
     #generalize the input json file. the input file needs to be in the same folder as this code. 
 
     txt_file_path = input("Enter the JSON FILE: ").strip()
-    txt_file_path += '.txt'  # Update with your file path
+    
+    #checks if the input file has .txt at the end. If not then, it adds txt. 
+    if txt_file_path.find('.') == -1: 
+        txt_file_path += '.txt'
+        
+    print("USED FILE:", txt_file_path)
+    
     output_file_path = './cik_numbers.json'  # Output JSON file 
-    main(txt_file_path, output_file_path)
+
+    try: 
+        main(txt_file_path, output_file_path)
+    except FileNotFoundError:
+        print("Error: The CIK input file cannot be found.")
