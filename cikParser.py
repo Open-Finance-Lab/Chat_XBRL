@@ -32,7 +32,9 @@ def main(txt_file, output_file):
 
 if __name__ == "__main__":
     txt_file_path = input("Enter the JSON FILE: ").strip()
-    txt_file_path += '.txt'  # Update with your file path
+    #checks if the input file has .txt at the end. If not then, it adds txt. 
+    if txt_file_path[-4:] != '.txt': 
+        txt_file_path+='.txt'  # Update with your file path
     output_file_path = './cik_numbers.json'  # Specify the output JSON file path
     try: 
         main(txt_file_path, output_file_path)
