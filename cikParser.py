@@ -1,9 +1,4 @@
 # -*- coding: utf-8 -*-
-"""
-Created on Wed Oct 23 17:32:48 2024
-
-@author: thealh
-"""
 
 import requests
 import json
@@ -32,6 +27,10 @@ def main(txt_file, output_file):
     print(f"Extracted CIK numbers written to {output_file}")
 
 if __name__ == "__main__":
-    txt_file_path = './cik-lookup-data-4.txt'  # Update with your file path
+    txt_file_path = input("Enter the JSON FILE: ").strip()
+    txt_file_path += '.txt'  # Update with your file path
     output_file_path = './cik_numbers.json'  # Specify the output JSON file path
-    main(txt_file_path, output_file_path)
+    try: 
+        main(txt_file_path, output_file_path)
+    except FileNotFoundError:
+        print("Error: The CIK input file cannot be found.")
