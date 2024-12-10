@@ -11,6 +11,8 @@ release:
   origin: Claude-1
   producer: Anthropic
   contact: ''
+  classfication: 'Class III - Open Model'
+  badge: 'Class III - Open Model'
   components:
     -
       name: 'Model architecture'

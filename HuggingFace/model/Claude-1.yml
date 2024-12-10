@@ -11,6 +11,8 @@ release:
   origin: ''
   producer: Anthropic
   contact: ''
+  classification: 'Class III - Open Model'
+  badge: 'Class III - Open Model', 'Class II - Open Tooling', 'Class I - Open Science'
   components:
     -
       name: 'Model architecture'

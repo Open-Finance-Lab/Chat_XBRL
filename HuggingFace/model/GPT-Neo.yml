@@ -11,6 +11,8 @@ release:
   origin: GPT
   producer: EleutherAI
   contact: ''
+  classification: 'Class III - Open Model'
+  badge: 'Class III - Open Model'
   components:
     -
       name: 'Model architecture'
