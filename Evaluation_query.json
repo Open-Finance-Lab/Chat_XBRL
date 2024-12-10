@@ -1,0 +1,35 @@
+prompt = f"The answer should strictly adhere to {format}\n\nContext: {context}\n\nInstructions: {instructions}\n\nQuestion: {question}\nAnswer:"
+def ask_question(question, format, context, instructions, tokenizer, model):
+    # Format the prompt with context and instructions
+    prompt = f"The answer should strictly adhere to {format}\n\nContext: {context}\n\nInstructions: {instructions}\n\nQuestion: {question}\nAnswer:"
+    inputs = tokenizer(prompt, return_tensors="pt").to(model.device)
+
+    # Generate a response (rest of the function remains the same)
+    with torch.no_grad():
+        outputs = model.generate(**inputs, max_new_tokens=50)
+    response = tokenizer.decode(outputs[0], skip_special_tokens=True)
+    answer = response.split("Answer:")[-1].strip()
+    return answer
+import pandas as pd
+
+json_file = "./formula_calculation.json"
+df = pd.read_json(json_file)
+json_data = df.to_dict(orient='records')
+
+# Convert json_data to a Pandas DataFrame
+json_data = pd.DataFrame(json_data)
+
+first_item = json_data.iloc[0]  # Get the first row as a Series
+
+answer = ask_question(
+    first_item['Query'],
+    first_item['Response Formats'],
+    first_item['Context'],
+    first_item.get('Additional Instructions'),
+    tokenizer,
+    model
+)
+print(first_item['Query'])
+# print(first_item['Context'])
+print(first_item['Additional Instructions'])
+print(answer)
