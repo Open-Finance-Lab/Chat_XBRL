@@ -1,0 +1,231 @@
+[
+    {
+        "id": [
+            "f-140"
+        ],
+        "contextID": [
+            "c-1"
+        ],
+        "doc_path": "amzn-20231231/amzn-20231231_htm.xml",
+        "category1": "xbrl_data_extraction",
+        "category2": "xbrl_tags",
+        "query": "What is the US GAAP XBRL tag for Cost of Goods Sold as reported by Amazon.com Inc for the Fiscal Year ending in FY 2023? (Response format: XBRL tag, e.g., 'Answer: us-gaap:Depreciation')",
+        "answer": "Answer:us-gaap:CostOfGoodsAndServicesSold",
+        "raw_answer": "us-gaap:CostOfGoodsAndServicesSold",
+        "xbrl_tag": [
+            "us-gaap:CostOfGoodsAndServicesSold"
+        ],
+        "ticker": "AMZN",
+        "template": "What is the US GAAP XBRL tag for {financial concept} as reported by {company name} for the {time period - noun} ending in {fiscal year/quarter}? (Response format: XBRL tag, e.g., 'Answer: us-gaap:Depreciation')",
+        "{financial concept}": "Cost of Goods Sold",
+        "{fiscal year/quarter}": "FY 2023",
+        "{company name}": "Amazon.com Inc",
+        "{time period - noun}": "Fiscal Year"
+    },
+    {
+        "id": [
+            "f-57"
+        ],
+        "contextID": [
+            "c-1"
+        ],
+        "doc_path": "amgn-20231231/amgn-20231231_htm.xml",
+        "category1": "xbrl_data_extraction",
+        "category2": "xbrl_tags",
+        "query": "What is the US GAAP XBRL tag for Cost of Goods Sold as reported by Amgen Inc for the Fiscal Year ending in FY 2023? (Response format: XBRL tag, e.g., 'Answer: us-gaap:Depreciation')",
+        "answer": "Answer:us-gaap:CostOfGoodsAndServicesSold",
+        "raw_answer": "us-gaap:CostOfGoodsAndServicesSold",
+        "xbrl_tag": [
+            "us-gaap:CostOfGoodsAndServicesSold"
+        ],
+        "ticker": "AMGN",
+        "template": "What is the US GAAP XBRL tag for {financial concept} as reported by {company name} for the {time period - noun} ending in {fiscal year/quarter}? (Response format: XBRL tag, e.g., 'Answer: us-gaap:Depreciation')",
+        "{financial concept}": "Cost of Goods Sold",
+        "{fiscal year/quarter}": "FY 2023",
+        "{company name}": "Amgen Inc",
+        "{time period - noun}": "Fiscal Year"
+    },
+    {
+        "id": [
+            "f-78"
+        ],
+        "contextID": [
+            "c-1"
+        ],
+        "doc_path": "aapl-20230930/aapl-20230930_htm.xml",
+        "category1": "xbrl_data_extraction",
+        "category2": "xbrl_tags",
+        "query": "What is the US GAAP XBRL tag for Cost of Goods Sold as reported by Apple Inc for the Fiscal Year ending in FY 2023? (Response format: XBRL tag, e.g., 'Answer: us-gaap:Depreciation')",
+        "answer": "Answer:us-gaap:CostOfGoodsAndServicesSold",
+        "raw_answer": "us-gaap:CostOfGoodsAndServicesSold",
+        "xbrl_tag": [
+            "us-gaap:CostOfGoodsAndServicesSold"
+        ],
+        "ticker": "AAPL",
+        "template": "What is the US GAAP XBRL tag for {financial concept} as reported by {company name} for the {time period - noun} ending in {fiscal year/quarter}? (Response format: XBRL tag, e.g., 'Answer: us-gaap:Depreciation')",
+        "{financial concept}": "Cost of Goods Sold",
+        "{fiscal year/quarter}": "FY 2023",
+        "{company name}": "Apple Inc",
+        "{time period - noun}": "Fiscal Year"
+    },
+    {
+        "id": [
+            "f-51"
+        ],
+        "contextID": [
+            "c-1"
+        ],
+        "doc_path": "ba-20231231/ba-20231231_htm.xml",
+        "category1": "xbrl_data_extraction",
+        "category2": "xbrl_tags",
+        "query": "What is the US GAAP XBRL tag for Cost of Goods Sold as reported by Boeing Co for the Fiscal Year ending in FY 2023? (Response format: XBRL tag, e.g., 'Answer: us-gaap:Depreciation')",
+        "answer": "Answer:us-gaap:CostOfRevenue",
+        "raw_answer": "us-gaap:CostOfRevenue",
+        "xbrl_tag": [
+            "us-gaap:CostOfRevenue"
+        ],
+        "ticker": "BA",
+        "template": "What is the US GAAP XBRL tag for {financial concept} as reported by {company name} for the {time period - noun} ending in {fiscal year/quarter}? (Response format: XBRL tag, e.g., 'Answer: us-gaap:Depreciation')",
+        "{financial concept}": "Cost of Goods Sold",
+        "{fiscal year/quarter}": "FY 2023",
+        "{company name}": "Boeing Co",
+        "{time period - noun}": "Fiscal Year"
+    },
+    {
+        "id": [
+            "f-51"
+        ],
+        "contextID": [
+            "c-1"
+        ],
+        "doc_path": "cat-20231231/cat-20231231_htm.xml",
+        "category1": "xbrl_data_extraction",
+        "category2": "xbrl_tags",
+        "query": "What is the US GAAP XBRL tag for Cost of Goods Sold as reported by Caterpillar Inc for the Fiscal Year ending in FY 2023? (Response format: XBRL tag, e.g., 'Answer: us-gaap:Depreciation')",
+        "answer": "Answer:us-gaap:CostOfRevenue",
+        "raw_answer": "us-gaap:CostOfRevenue",
+        "xbrl_tag": [
+            "us-gaap:CostOfRevenue"
+        ],
+        "ticker": "CAT",
+        "template": "What is the US GAAP XBRL tag for {financial concept} as reported by {company name} for the {time period - noun} ending in {fiscal year/quarter}? (Response format: XBRL tag, e.g., 'Answer: us-gaap:Depreciation')",
+        "{financial concept}": "Cost of Goods Sold",
+        "{fiscal year/quarter}": "FY 2023",
+        "{company name}": "Caterpillar Inc",
+        "{time period - noun}": "Fiscal Year"
+    },
+    {
+        "id": [
+            "f-137"
+        ],
+        "contextID": [
+            "c-1"
+        ],
+        "doc_path": "csco-20230729/csco-20230729_htm.xml",
+        "category1": "xbrl_data_extraction",
+        "category2": "xbrl_tags",
+        "query": "What is the US GAAP XBRL tag for Cost of Goods Sold as reported by Cisco Systems Inc for the Fiscal Year ending in FY 2023? (Response format: XBRL tag, e.g., 'Answer: us-gaap:Depreciation')",
+        "answer": "Answer:us-gaap:CostOfGoodsAndServicesSold",
+        "raw_answer": "us-gaap:CostOfGoodsAndServicesSold",
+        "xbrl_tag": [
+            "us-gaap:CostOfGoodsAndServicesSold"
+        ],
+        "ticker": "CSCO",
+        "template": "What is the US GAAP XBRL tag for {financial concept} as reported by {company name} for the {time period - noun} ending in {fiscal year/quarter}? (Response format: XBRL tag, e.g., 'Answer: us-gaap:Depreciation')",
+        "{financial concept}": "Cost of Goods Sold",
+        "{fiscal year/quarter}": "FY 2023",
+        "{company name}": "Cisco Systems Inc",
+        "{time period - noun}": "Fiscal Year"
+    },
+    {
+        "id": [
+            "f-75"
+        ],
+        "contextID": [
+            "c-1"
+        ],
+        "doc_path": "cvx-20231231/cvx-20231231_htm.xml",
+        "category1": "xbrl_data_extraction",
+        "category2": "xbrl_tags",
+        "query": "What is the US GAAP XBRL tag for Cost of Goods Sold as reported by Chevron Corp for the Fiscal Year ending in FY 2023? (Response format: XBRL tag, e.g., 'Answer: us-gaap:Depreciation')",
+        "answer": "Answer:us-gaap:CostOfGoodsAndServicesSold",
+        "raw_answer": "us-gaap:CostOfGoodsAndServicesSold",
+        "xbrl_tag": [
+            "us-gaap:CostOfGoodsAndServicesSold"
+        ],
+        "ticker": "CVX",
+        "template": "What is the US GAAP XBRL tag for {financial concept} as reported by {company name} for the {time period - noun} ending in {fiscal year/quarter}? (Response format: XBRL tag, e.g., 'Answer: us-gaap:Depreciation')",
+        "{financial concept}": "Cost of Goods Sold",
+        "{fiscal year/quarter}": "FY 2023",
+        "{company name}": "Chevron Corp",
+        "{time period - noun}": "Fiscal Year"
+    },
+    {
+        "id": [
+            "f-114"
+        ],
+        "contextID": [
+            "i29cb9c993c034daa877134859efc0749_D20220131-20230129"
+        ],
+        "doc_path": "hd-20230129/hd-20230129_htm.xml",
+        "category1": "xbrl_data_extraction",
+        "category2": "xbrl_tags",
+        "query": "What is the US GAAP XBRL tag for Cost of Goods Sold as reported by Home Depot Inc for the Fiscal Year ending in FY 2023? (Response format: XBRL tag, e.g., 'Answer: us-gaap:Depreciation')",
+        "answer": "Answer:us-gaap:CostOfRevenue",
+        "raw_answer": "us-gaap:CostOfRevenue",
+        "xbrl_tag": [
+            "us-gaap:CostOfRevenue"
+        ],
+        "ticker": "HD",
+        "template": "What is the US GAAP XBRL tag for {financial concept} as reported by {company name} for the {time period - noun} ending in {fiscal year/quarter}? (Response format: XBRL tag, e.g., 'Answer: us-gaap:Depreciation')",
+        "{financial concept}": "Cost of Goods Sold",
+        "{fiscal year/quarter}": "FY 2023",
+        "{company name}": "Home Depot Inc",
+        "{time period - noun}": "Fiscal Year"
+    },
+    {
+        "id": [
+            "f-69"
+        ],
+        "contextID": [
+            "c-1"
+        ],
+        "doc_path": "hon-20231231/hon-20231231_htm.xml",
+        "category1": "xbrl_data_extraction",
+        "category2": "xbrl_tags",
+        "query": "What is the US GAAP XBRL tag for Cost of Goods Sold as reported by Honeywell International Inc for the Fiscal Year ending in FY 2023? (Response format: XBRL tag, e.g., 'Answer: us-gaap:Depreciation')",
+        "answer": "Answer:us-gaap:CostOfGoodsAndServicesSold",
+        "raw_answer": "us-gaap:CostOfGoodsAndServicesSold",
+        "xbrl_tag": [
+            "us-gaap:CostOfGoodsAndServicesSold"
+        ],
+        "ticker": "HON",
+        "template": "What is the US GAAP XBRL tag for {financial concept} as reported by {company name} for the {time period - noun} ending in {fiscal year/quarter}? (Response format: XBRL tag, e.g., 'Answer: us-gaap:Depreciation')",
+        "{financial concept}": "Cost of Goods Sold",
+        "{fiscal year/quarter}": "FY 2023",
+        "{company name}": "Honeywell International Inc",
+        "{time period - noun}": "Fiscal Year"
+    },
+    {
+        "id": [
+            "f-199"
+        ],
+        "contextID": [
+            "c-1"
+        ],
+        "doc_path": "ibm-20231231/ibm-20231231_htm.xml",
+        "category1": "xbrl_data_extraction",
+        "category2": "xbrl_tags",
+        "query": "What is the US GAAP XBRL tag for Cost of Goods Sold as reported by International Business Machines Corp for the Fiscal Year ending in FY 2023? (Response format: XBRL tag, e.g., 'Answer: us-gaap:Depreciation')",
+        "answer": "Answer:us-gaap:CostOfRevenue",
+        "raw_answer": "us-gaap:CostOfRevenue",
+        "xbrl_tag": [
+            "us-gaap:CostOfRevenue"
+        ],
+        "ticker": "IBM",
+        "template": "What is the US GAAP XBRL tag for {financial concept} as reported by {company name} for the {time period - noun} ending in {fiscal year/quarter}? (Response format: XBRL tag, e.g., 'Answer: us-gaap:Depreciation')",
+        "{financial concept}": "Cost of Goods Sold",
+        "{fiscal year/quarter}": "FY 2023",
+        "{company name}": "International Business Machines Corp",
+        "{time period - noun}": "Fiscal Year"
+    },
