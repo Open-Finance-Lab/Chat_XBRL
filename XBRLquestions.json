@@ -1,0 +1,248 @@
+[
+    {
+        "id": [
+            "f-2543"
+        ],
+        "contextID": [
+            "c-48"
+        ],
+        "doc_path": "vz-20231231/vz-20231231_htm.xml",
+        "category1": "xbrl_data_extraction",
+        "category2": "xbrl_tags",
+        "query": "What is the US GAAP XBRL tag for Accounts Payable as reported by Verizon Communications Inc for the Fiscal Year ending in FY 2023? (Response format: XBRL tag, e.g., 'Answer: us-gaap:Depreciation')",
+        "answer": "Answer:us-gaap:AccountsPayableCurrent",
+        "raw_answer": "us-gaap:AccountsPayableCurrent",
+        "xbrl_tag": [
+            "us-gaap:AccountsPayableCurrent"
+        ],
+        "ticker": "VZ",
+        "template": "What is the US GAAP XBRL tag for {financial concept} as reported by {company name} for the {time period - noun} ending in {fiscal year/quarter}? (Response format: XBRL tag, e.g., 'Answer: us-gaap:Depreciation')",
+        "{financial concept}": "Accounts Payable",
+        "{fiscal year/quarter}": "FY 2023",
+        "{company name}": "Verizon Communications Inc",
+        "{time period - noun}": "Fiscal Year"
+    },
+    {
+        "id": [
+            "f-312",
+            "f-2366"
+        ],
+        "contextID": [
+            "c-47",
+            "c-47"
+        ],
+        "doc_path": "dis-20230930/dis-20230930_htm.xml",
+        "category1": "xbrl_data_extraction",
+        "category2": "xbrl_tags",
+        "query": "What is the US GAAP XBRL tag for Accounts Receivable as reported by Walt Disney Co for the Fiscal Year ending in FY 2023? (Response format: XBRL tag, e.g., 'Answer: us-gaap:Depreciation')",
+        "answer": "Answer:us-gaap:ReceivablesNetCurrent",
+        "raw_answer": "us-gaap:ReceivablesNetCurrent",
+        "xbrl_tag": [
+            "us-gaap:ReceivablesNetCurrent"
+        ],
+        "ticker": "DIS",
+        "template": "What is the US GAAP XBRL tag for {financial concept} as reported by {company name} for the {time period - noun} ending in {fiscal year/quarter}? (Response format: XBRL tag, e.g., 'Answer: us-gaap:Depreciation')",
+        "{financial concept}": "Accounts Receivable",
+        "{fiscal year/quarter}": "FY 2023",
+        "{company name}": "Walt Disney Co",
+        "{time period - noun}": "Fiscal Year"
+    },
+    {
+        "id": [
+            "f-167",
+            "f-3645"
+        ],
+        "contextID": [
+            "c-5",
+            "c-5"
+        ],
+        "doc_path": "cat-20231231/cat-20231231_htm.xml",
+        "category1": "xbrl_data_extraction",
+        "category2": "xbrl_tags",
+        "query": "What is the US GAAP XBRL tag for Total Assets as reported by Caterpillar Inc for the Fiscal Year ending in FY 2023? (Response format: XBRL tag, e.g., 'Answer: us-gaap:Depreciation')",
+        "answer": "Answer:us-gaap:Assets",
+        "raw_answer": "us-gaap:Assets",
+        "xbrl_tag": [
+            "us-gaap:Assets"
+        ],
+        "ticker": "CAT",
+        "template": "What is the US GAAP XBRL tag for {financial concept} as reported by {company name} for the {time period - noun} ending in {fiscal year/quarter}? (Response format: XBRL tag, e.g., 'Answer: us-gaap:Depreciation')",
+        "{financial concept}": "Total Assets",
+        "{fiscal year/quarter}": "FY 2023",
+        "{company name}": "Caterpillar Inc",
+        "{time period - noun}": "Fiscal Year"
+    },
+    {
+        "id": [
+            "f-78"
+        ],
+        "contextID": [
+            "c-1"
+        ],
+        "doc_path": "aapl-20230930/aapl-20230930_htm.xml",
+        "category1": "xbrl_data_extraction",
+        "category2": "xbrl_tags",
+        "query": "What is the US GAAP XBRL tag for Cost of Goods Sold as reported by Apple Inc for the Fiscal Year ending in FY 2023? (Response format: XBRL tag, e.g., 'Answer: us-gaap:Depreciation')",
+        "answer": "Answer:us-gaap:CostOfGoodsAndServicesSold",
+        "raw_answer": "us-gaap:CostOfGoodsAndServicesSold",
+        "xbrl_tag": [
+            "us-gaap:CostOfGoodsAndServicesSold"
+        ],
+        "ticker": "AAPL",
+        "template": "What is the US GAAP XBRL tag for {financial concept} as reported by {company name} for the {time period - noun} ending in {fiscal year/quarter}? (Response format: XBRL tag, e.g., 'Answer: us-gaap:Depreciation')",
+        "{financial concept}": "Cost of Goods Sold",
+        "{fiscal year/quarter}": "FY 2023",
+        "{company name}": "Apple Inc",
+        "{time period - noun}": "Fiscal Year"
+    },
+    {
+        "id": [
+            "f-138",
+            "f-2359"
+        ],
+        "contextID": [
+            "c-1",
+            "c-1"
+        ],
+        "doc_path": "vz-20231231/vz-20231231_htm.xml",
+        "category1": "xbrl_data_extraction",
+        "category2": "xbrl_tags",
+        "query": "What is the US GAAP XBRL tag for Total Revenue as reported by Verizon Communications Inc for the Fiscal Year ending in FY 2023? (Response format: XBRL tag, e.g., 'Answer: us-gaap:Depreciation')",
+        "answer": "Answer:us-gaap:Revenues",
+        "raw_answer": "us-gaap:Revenues",
+        "xbrl_tag": [
+            "us-gaap:Revenues"
+        ],
+        "ticker": "VZ",
+        "template": "What is the US GAAP XBRL tag for {financial concept} as reported by {company name} for the {time period - noun} ending in {fiscal year/quarter}? (Response format: XBRL tag, e.g., 'Answer: us-gaap:Depreciation')",
+        "{financial concept}": "Total Revenue",
+        "{fiscal year/quarter}": "FY 2023",
+        "{company name}": "Verizon Communications Inc",
+        "{time period - noun}": "Fiscal Year"
+    },
+    {
+        "id": [
+            "f-51"
+        ],
+        "contextID": [
+            "c-1"
+        ],
+        "doc_path": "ba-20231231/ba-20231231_htm.xml",
+        "category1": "xbrl_data_extraction",
+        "category2": "xbrl_tags",
+        "query": "What is the US GAAP XBRL tag for Cost of Goods Sold as reported by Boeing Co for the Fiscal Year ending in FY 2023? (Response format: XBRL tag, e.g., 'Answer: us-gaap:Depreciation')",
+        "answer": "Answer:us-gaap:CostOfRevenue",
+        "raw_answer": "us-gaap:CostOfRevenue",
+        "xbrl_tag": [
+            "us-gaap:CostOfRevenue"
+        ],
+        "ticker": "BA",
+        "template": "What is the US GAAP XBRL tag for {financial concept} as reported by {company name} for the {time period - noun} ending in {fiscal year/quarter}? (Response format: XBRL tag, e.g., 'Answer: us-gaap:Depreciation')",
+        "{financial concept}": "Cost of Goods Sold",
+        "{fiscal year/quarter}": "FY 2023",
+        "{company name}": "Boeing Co",
+        "{time period - noun}": "Fiscal Year"
+    },
+    {
+        "id": [
+            "f-123",
+            "f-145",
+            "f-253",
+            "f-424",
+            "f-2103"
+        ],
+        "contextID": [
+            "c-1",
+            "c-1",
+            "c-1",
+            "c-1",
+            "c-1"
+        ],
+        "doc_path": "axp-20231231/axp-20231231_htm.xml",
+        "category1": "xbrl_data_extraction",
+        "category2": "xbrl_tags",
+        "query": "What is the US GAAP XBRL tag for Net Income as reported by American Express Co for the Fiscal Year ending in FY 2023? (Response format: XBRL tag, e.g., 'Answer: us-gaap:Depreciation')",
+        "answer": "Answer:us-gaap:NetIncomeLoss",
+        "raw_answer": "us-gaap:NetIncomeLoss",
+        "xbrl_tag": [
+            "us-gaap:NetIncomeLoss"
+        ],
+        "ticker": "AXP",
+        "template": "What is the US GAAP XBRL tag for {financial concept} as reported by {company name} for the {time period - noun} ending in {fiscal year/quarter}? (Response format: XBRL tag, e.g., 'Answer: us-gaap:Depreciation')",
+        "{financial concept}": "Net Income",
+        "{fiscal year/quarter}": "FY 2023",
+        "{company name}": "American Express Co",
+        "{time period - noun}": "Fiscal Year"
+    },
+    {
+        "id": [
+            "f-229"
+        ],
+        "contextID": [
+            "c-6"
+        ],
+        "doc_path": "mcd-20231231/mcd-20231231_htm.xml",
+        "category1": "xbrl_data_extraction",
+        "category2": "xbrl_tags",
+        "query": "What is the US GAAP XBRL tag for Retained Earnings as reported by McDonald\u2019s Corp for the Fiscal Year ending in FY 2023? (Response format: XBRL tag, e.g., 'Answer: us-gaap:Depreciation')",
+        "answer": "Answer:us-gaap:RetainedEarningsAccumulatedDeficit",
+        "raw_answer": "us-gaap:RetainedEarningsAccumulatedDeficit",
+        "xbrl_tag": [
+            "us-gaap:RetainedEarningsAccumulatedDeficit"
+        ],
+        "ticker": "MCD",
+        "template": "What is the US GAAP XBRL tag for {financial concept} as reported by {company name} for the {time period - noun} ending in {fiscal year/quarter}? (Response format: XBRL tag, e.g., 'Answer: us-gaap:Depreciation')",
+        "{financial concept}": "Retained Earnings",
+        "{fiscal year/quarter}": "FY 2023",
+        "{company name}": "McDonald\u2019s Corp",
+        "{time period - noun}": "Fiscal Year"
+    },
+    {
+        "id": [
+            "f-165",
+            "f-639"
+        ],
+        "contextID": [
+            "c-11",
+            "c-11"
+        ],
+        "doc_path": "mmm-20231231/mmm-20231231_htm.xml",
+        "category1": "xbrl_data_extraction",
+        "category2": "xbrl_tags",
+        "query": "What is the US GAAP XBRL tag for Goodwill as reported by 3M Co for the Fiscal Year ending in FY 2023? (Response format: XBRL tag, e.g., 'Answer: us-gaap:Depreciation')",
+        "answer": "Answer:us-gaap:Goodwill",
+        "raw_answer": "us-gaap:Goodwill",
+        "xbrl_tag": [
+            "us-gaap:Goodwill"
+        ],
+        "ticker": "MMM",
+        "template": "What is the US GAAP XBRL tag for {financial concept} as reported by {company name} for the {time period - noun} ending in {fiscal year/quarter}? (Response format: XBRL tag, e.g., 'Answer: us-gaap:Depreciation')",
+        "{financial concept}": "Goodwill",
+        "{fiscal year/quarter}": "FY 2023",
+        "{company name}": "3M Co",
+        "{time period - noun}": "Fiscal Year"
+    },
+    {
+        "id": [
+            "f-181",
+            "f-885"
+        ],
+        "contextID": [
+            "c-2",
+            "c-2"
+        ],
+        "doc_path": "ba-20231231/ba-20231231_htm.xml",
+        "category1": "xbrl_data_extraction",
+        "category2": "xbrl_tags",
+        "query": "Can you provide the XBRL tag under US GAAP for Accounts Receivable that was used by Boeing Co in the FY 2023? (Response format: XBRL tag, e.g., 'Answer: us-gaap:Depreciation')",
+        "answer": "Answer:us-gaap:AccountsReceivableNetCurrent",
+        "raw_answer": "us-gaap:AccountsReceivableNetCurrent",
+        "xbrl_tag": [
+            "us-gaap:AccountsReceivableNetCurrent"
+        ],
+        "ticker": "BA",
+        "template": "Can you provide the XBRL tag under US GAAP for {financial concept} that was used by {company name} in the {fiscal year/quarter}? (Response format: XBRL tag, e.g., 'Answer: us-gaap:Depreciation')",
+        "{financial concept}": "Accounts Receivable",
+        "{fiscal year/quarter}": "FY 2023",
+        "{company name}": "Boeing Co"
+    },
