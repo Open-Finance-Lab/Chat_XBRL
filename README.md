@@ -1,1 +1,6 @@
 # Chat_XBRL
+
+cik_parser.py =>
+This code is a Python script that processes data from a text file, extracts specific information, and saves it in a structured JSON format. It starts by defining a function parse_data_from_file that takes a file path as input and reads its content line by line using the specified encoding latin-1. Within the function, it identifies lines containing a colon (:), splits each such line into two parts: a "name" and a "CIK" (Central Index Key), and formats this information into a dictionary with keys name and cik. These dictionaries are appended to a list, which is returned as the parsed data.
+
+The script reads data from an input file named cik-lookup-data.txt, processes it using the parse_data_from_file function, and converts the resulting data into a formatted JSON string using json.dumps. Finally, the JSON data is written to an output file, parsed_companies.json, ensuring it is neatly indented for readability. This script is particularly useful for converting raw text-based company and identifier data into a structured JSON format for further use or analysis.
