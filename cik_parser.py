@@ -23,6 +23,6 @@ def main(txt_file, output_file):
     print(f"Extracted CIK numbers written to {output_file}")
 
 if __name__ == "__main__":
-    txt_file_path = './cik-lookup-data-3.txt'  # Update with your file path
+    txt_file_path = './cik-lookup-data.txt'  # Update with your file path
     output_file_path = './cik_numbers.json'  # Specify the output JSON file path
     main(txt_file_path, output_file_path)
