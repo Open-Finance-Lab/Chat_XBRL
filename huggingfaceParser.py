@@ -1,5 +1,11 @@
 import requests
 import os
+
+
+# This script scrapes a website for large language model (LLM) data, including classifications and badges, 
+# and updates corresponding YAML files in a specified directory. If a YAML file exists for a model, it is 
+# updated with the scraped data; otherwise, a message is logged.
+
 try:
     from bs4 import BeautifulSoup
 except ImportError:

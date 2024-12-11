@@ -3,6 +3,10 @@ import yaml
 import gradio as gr
 import pandas as pd
 
+# This script provides a tool for exploring metadata about machine learning models based on the 
+# Model Openness Framework (MOF). It loads model data from YAML files, supports filtering and 
+# pagination, and displays the data in a user-friendly Gradio interface.
+
 # ---- Model Class ---- #
 class Model:
     def __init__(self, model_data):
