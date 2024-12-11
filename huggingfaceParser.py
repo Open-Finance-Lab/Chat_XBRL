@@ -1,7 +1,14 @@
 import requests
-from bs4 import BeautifulSoup
-import yaml
 import os
+try:
+    from bs4 import BeautifulSoup
+except ImportError:
+    print("BeautifulSoup not found.")
+
+try:
+    import yaml
+except ImportError:
+    print("PyYAML not found.")
 
 # Function to scrape the website for LLM classifications and badges
 def scrape_llm_data(url):
@@ -15,20 +22,29 @@ def scrape_llm_data(url):
             classification = row.find('td', class_='classification').text.strip()
             badge = row.find('td', class_='badge-number').text.strip()
             llm_data.append({'name': llm_name, 'classification': classification, 'badge_number': badge})
+    else:
+        print(f"Failed to fetch data from {url}, status code: {response.status_code}")
     return llm_data
 
 # Function to update the YAML file
 def update_yaml_file(file_path, classification, badge_number):
-    with open(file_path, 'r') as file:
-        data = yaml.safe_load(file)
+    try:
+        with open(file_path, 'r') as file:
+            data = yaml.safe_load(file)
 
-    # Add classification and badge to the YAML structure
-    data['classification'] = classification
-    data['badge_number'] = badge_number
+        if not data:
+            data = {}  # Handle empty YAML files
 
-    # Save the updated YAML
-    with open(file_path, 'w') as file:
-        yaml.dump(data, file, default_flow_style=False)
+        # Add classification and badge to the YAML structure
+        data['classification'] = classification
+        data['badge_number'] = badge_number
+
+        # Save the updated YAML
+        with open(file_path, 'w') as file:
+            yaml.dump(data, file, default_flow_style=False)
+        print(f"Successfully updated {file_path}")
+    except Exception as e:
+        print(f"Failed to update {file_path}: {e}")
 
 # Main logic
 if __name__ == "__main__":
@@ -38,12 +54,14 @@ if __name__ == "__main__":
     # Directory containing YAML files
     yaml_directory = "./models"
 
-    for llm in llm_data:
-        file_name = f"{llm['name'].replace(' ', '_')}.yml"
-        file_path = os.path.join(yaml_directory, file_name)
+    if not os.path.exists(yaml_directory):
+        print(f"Directory {yaml_directory} does not exist. Please create it and add YAML files.")
+    else:
+        for llm in llm_data:
+            file_name = f"{llm['name'].replace(' ', '_')}.yml"
+            file_path = os.path.join(yaml_directory, file_name)
 
-        if os.path.exists(file_path):
-            update_yaml_file(file_path, llm['classification'], llm['badge_number'])
-            print(f"Updated {file_name} with classification and badge.")
-        else:
-            print(f"YAML file for {llm['name']} not found.")
+            if os.path.exists(file_path):
+                update_yaml_file(file_path, llm['classification'], llm['badge_number'])
+            else:
+                print(f"YAML file for {llm['name']} not found at {file_path}.")
