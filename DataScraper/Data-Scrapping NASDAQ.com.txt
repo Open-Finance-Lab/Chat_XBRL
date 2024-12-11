@@ -1,0 +1,19 @@
+Data-Scrapping NASDAQ.com
+
+
+
+
+Link (URL)
+Name of the company: 
+
+Data collection date & time: 
+
+Key Data
+	Current Value
+	Net Change / %			Two numbers split by '/'
+	Previous Close
+	Today's High
+	Todays Low
+
+Latest News
+
