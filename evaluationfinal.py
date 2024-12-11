@@ -23,6 +23,25 @@ def create_session():
     session.headers.update(headers)
     return session
 
+def validate_cik(cik):
+    """
+    Validates the given CIK number to ensure it meets SEC requirements.
+    
+    Args:
+        cik (str): The CIK number to validate.
+
+    Returns:
+        str: The valid CIK as a 10-digit zero-padded string.
+
+    Raises:
+        ValueError: If the CIK is not a valid 10-digit number.
+    """
+    if not cik.isdigit():
+        raise ValueError(f"Invalid CIK '{cik}': CIK must be a numeric value.")
+    if len(cik) > 10:
+        raise ValueError(f"Invalid CIK '{cik}': CIK must be at most 10 digits.")
+    
+    return cik.zfill(10)  # Pad with leading zeros to ensure it's 10 digits
 
 def extract_file_links(soup, link):
     """
